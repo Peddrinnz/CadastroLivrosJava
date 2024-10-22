@@ -1,5 +1,8 @@
+import br.view.livroView;
+
 public class App {
     public static void main(String[] args) throws Exception {
-        System.out.println("Hello, World!");
+        livroView livroView = new livroView();
+        livroView.menuInicial();
     }
 }
