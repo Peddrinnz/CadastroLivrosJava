@@ -26,7 +26,6 @@ public class MenuView {
             switch (op) {
                 case 1:
                     JOptionPane.showMessageDialog(null, "Livro cadastrado.");
-                    livro.livroView = coletarDados(livro);
                     break;
                 case 2:
                     JOptionPane.showMessageDialog(null, "Usuário cadastrado.");

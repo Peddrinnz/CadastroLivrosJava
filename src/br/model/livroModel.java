@@ -1,6 +1,16 @@
 package br.model;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "Livro")
 public class LivroModel {
+    @Id
+    @GeneratedValue
+    private long id;
     private String titulo;
     private String autor;
     private int isbn;
@@ -45,4 +55,11 @@ public class LivroModel {
         this.qtd_disponivel = qtd_disponivel;
     }
 
+    public long getId() {
+        return id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
+    }
 }

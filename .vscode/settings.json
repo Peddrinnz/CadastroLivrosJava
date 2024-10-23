@@ -2,6 +2,21 @@
     "java.project.sourcePaths": ["src"],
     "java.project.outputPath": "bin",
     "java.project.referencedLibraries": [
-        "lib/**/*.jar"
+        "lib/**/*.jar",
+        "jars/antlr-complete-3.5.2.jar",
+        "jars/byte-buddy-1.14.12.jar",
+        "jars/classmate-1.5.1.jar",
+        "jars/hibernate-commons-annotations-5.1.2.Final.jar",
+        "jars/hibernate-core-5.6.15.Final.jar",
+        "jars/hibernate-entitymanager-5.6.15.Final.jar",
+        "jars/hibernate-jpa-2.1-api-1.0.2.Final.jar",
+        "jars/hibernate-validator-6.1.7.Final.jar",
+        "jars/jakarta.xml.bind-api-4.0.0.jar",
+        "jars/jandex-2.4.3.Final.jar",
+        "jars/javax.persistence-api-2.2.jar",
+        "jars/jaxb-api-2.3.1.jar",
+        "jars/jboss-logging-3.5.3.Final.jar",
+        "jars/jta-1.1.jar",
+        "jars/mysql-connector-j-9.0.0.jar"
     ]
 }
