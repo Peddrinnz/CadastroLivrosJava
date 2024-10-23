@@ -10,6 +10,6 @@ public class LivroView {
         livro.setIsbn(Integer.parseInt(JOptionPane.showInputDialog(null,"Digite o ISBN")));
         livro.setQtd_disponivel(Integer.parseInt(JOptionPane.showInputDialog(null, "Digite a quantidade de Exemplares:")));
 
-        return new LivroModel(livro);
+        return livro;
     }
 }
