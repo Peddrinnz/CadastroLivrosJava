@@ -1,12 +1,12 @@
 package br.model;
 
-public class livroModel {
+public class LivroModel {
     private String titulo;
     private String autor;
     private int isbn;
     private int qtd_disponivel;
 
-    public livroModel(String titulo, String autor, int isbn, int qtd_disponivel) {
+    public LivroModel(String titulo, String autor, int isbn, int qtd_disponivel) {
         this.titulo = titulo;
         this.autor = autor;
         this.isbn = isbn;

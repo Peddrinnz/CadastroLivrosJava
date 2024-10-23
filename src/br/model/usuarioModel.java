@@ -1,11 +1,11 @@
 package br.model;
 
-public class usuarioModel {
+public class UsuarioModel {
     private String nomeUsuario;
     private String email;
     private String num_ID;
     
-    public usuarioModel(String nomeUsuario, String email, String num_ID) {
+    public UsuarioModel(String nomeUsuario, String email, String num_ID) {
         this.nomeUsuario = nomeUsuario;
         this.email = email;
         this.num_ID = num_ID;

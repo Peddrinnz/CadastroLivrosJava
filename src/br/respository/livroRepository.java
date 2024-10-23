@@ -1,21 +1,21 @@
 package br.respository;
 
-import br.model.livroModel;
+import br.model.LivroModel;
 import java.util.ArrayList;
 import java.util.List;
 
-public class livroRepository {
-    private List<livroModel> livros = new ArrayList<>();
+public class LivroRepository {
+    private List<LivroModel> livros = new ArrayList<>();
 
     // implementei a funcionalidade para ler o livro
-    public void addLivro(livroModel livro) {
+    public void addLivro(LivroModel livro) {
         livros.add(livro);
     }
 
     // implementei a funcionalidade de listar os livros baseado se há livros > 0
-    public List<livroModel> listarLivrosDisponiveis() {
-        List<livroModel> livrosDisponiveis = new ArrayList<>();
-        for (livroModel livro : livros) {
+    public List<LivroModel> listarLivrosDisponiveis() {
+        List<LivroModel> livrosDisponiveis = new ArrayList<>();
+        for (LivroModel livro : livros) {
             if (livro.getQtd_disponivel() > 0) {
                 livrosDisponiveis.add(livro);
             }
@@ -24,12 +24,12 @@ public class livroRepository {
     }
 
     // implementei a funcionalidade de remover um livro da lista
-    public void removerLivro(livroModel livro) {
+    public void removerLivro(LivroModel livro) {
         livros.remove(livro);
     }
 
     // implementei a funcionalide de atualizar o livro
-    public void atualizarLivro(livroModel livroAntigo, livroModel livroNovo) {
+    public void atualizarLivro(LivroModel livroAntigo, LivroModel livroNovo) {
         int index = livros.indexOf(livroAntigo);
         if (index != -1) {
             livros.set(index, livroNovo);
@@ -37,7 +37,7 @@ public class livroRepository {
     }
 
     // função para verificar se pode haver emprestimo de livros
-    public boolean emprestimoLivro(livroModel livro) {
+    public boolean emprestimoLivro(LivroModel livro) {
         if (livro.getQtd_disponivel() > 0) {
             livro.setQtd_disponivel(livro.getQtd_disponivel() - 1);
             return true;
@@ -46,7 +46,7 @@ public class livroRepository {
     }
 
     // função para registrar devolução de livro
-    public void devolverLivro(livroModel livro) {
+    public void devolverLivro(LivroModel livro) {
         livro.setQtd_disponivel(livro.getQtd_disponivel() + 1);
     }
 }
