@@ -1,17 +1,17 @@
 package br.model;
 
-import java.util.Date;
+import java.time.LocalDateTime;
 
 public class EmprestimoModel {
     private UsuarioModel usuario;
     private LivroModel livro;
-    private Date dataEmprestimo;
-    private Date dataDevolucao;
-    public EmprestimoModel(UsuarioModel usuario, LivroModel livro, Date dataEmprestimo, Date dataDevolucao) {
+    private LocalDateTime dataEmprestimo;
+    private LocalDateTime dataDevolucao;
+    public EmprestimoModel(UsuarioModel usuario, LivroModel livro) {
         this.usuario = usuario;
         this.livro = livro;
-        this.dataEmprestimo = dataEmprestimo;
-        this.dataDevolucao = dataDevolucao;
+        this.dataEmprestimo = LocalDateTime.now();
+        this.dataDevolucao = null;
     }
 
     public UsuarioModel getUsuario() {
@@ -26,16 +26,13 @@ public class EmprestimoModel {
     public void setLivro(LivroModel livro) {
         this.livro = livro;
     }
-    public Date getDataEmprestimo() {
+    public LocalDateTime getDataEmprestimo() {
         return dataEmprestimo;
     }
-    public void setDataEmprestimo(Date dataEmprestimo) {
-        this.dataEmprestimo = dataEmprestimo;
-    }
-    public Date getDataDevolucao() {
+    public LocalDateTime getDataDevolucao() {
         return dataDevolucao;
     }
-    public void setDataDevolucao(Date dataDevolucao) {
+    public void setDataDevolucao(LocalDateTime dataDevolucao) {
         this.dataDevolucao = dataDevolucao;
     }
 }

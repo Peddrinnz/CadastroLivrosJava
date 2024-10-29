@@ -5,7 +5,7 @@ import br.respository.LivroRepository;
 import java.util.List;
 
 public class LivroController{
-    private static LivroRepository livroRepository = new LivroRepository();
+    private LivroRepository livroRepository = new LivroRepository();
 
     public String salvarLivro(LivroModel livro) {
         return livroRepository.salvar(livro);
