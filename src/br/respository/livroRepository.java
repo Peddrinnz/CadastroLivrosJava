@@ -1,34 +1,22 @@
 package br.respository;
 
-import javax.persistence.EntityManager;
-import javax.persistence.EntityManagerFactory;
-import javax.persistence.Persistence;
-
 import br.model.LivroModel;
+import java.util.ArrayList;
+import java.util.List;
+
 public class LivroRepository {
-    private static LivroRepository instance;
-	protected EntityManager entityManager;
-
-	public LivroRepository() {
-		entityManager = getEntityManager();
-	}
-
-	private EntityManager getEntityManager() {
-		EntityManagerFactory factory = Persistence.createEntityManagerFactory("crudHibernatePU");
-		if (entityManager == null) {
-			entityManager = factory.createEntityManager();
-		}
-		return entityManager;
-	}
-
-	public static LivroRepository getInstance() {
-		if (instance == null) {
-			instance = new LivroRepository();
-		}
-		return instance;
-	}
+    private List<LivroModel> livros = new ArrayList<>();
 
     public String salvar(LivroModel livro) {
-        return "Salvo com sucesso";
-    }   
-}    
+        if (livro != null) {
+            livros.add(livro);
+            return "Livro salvo com sucesso";
+        }
+        return "Erro ao salvar o livro";
+    }
+
+    public List<LivroModel> listarLivros() {
+        return livros; 
+    }
+}
+ 

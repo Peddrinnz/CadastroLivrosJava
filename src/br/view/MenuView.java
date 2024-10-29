@@ -4,11 +4,9 @@ import javax.swing.*;
 
 import br.controller.LivroController;
 import br.model.LivroModel;
-import br.view.LivroView;
 
 public class MenuView {
     int op;
-    LivroModel livroModel = new LivroModel(null, null, op, op);
     LivroView livroView = new LivroView();
     LivroController livroController = new LivroController();
 
@@ -25,7 +23,10 @@ public class MenuView {
 
             switch (op) {
                 case 1:
-                    JOptionPane.showMessageDialog(null, "Livro cadastrado.");
+                    LivroModel livroModel = new LivroModel(null, null, 0, 0);
+                    livroModel = livroView.coletarDados(livroModel);
+                    String resultado = livroController.salvarLivro(livroModel);
+                    JOptionPane.showMessageDialog(null, resultado);
                     break;
                 case 2:
                     JOptionPane.showMessageDialog(null, "Usuário cadastrado.");
