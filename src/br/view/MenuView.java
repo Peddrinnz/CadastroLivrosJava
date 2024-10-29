@@ -4,6 +4,7 @@ import javax.swing.*;
 
 import br.controller.LivroController;
 import br.model.LivroModel;
+import java.util.List;
 
 public class MenuView {
     int op;
@@ -38,7 +39,20 @@ public class MenuView {
                     JOptionPane.showMessageDialog(null, "Devolução registrada");
                     break;
                 case 5:
-                    JOptionPane.showMessageDialog(null, "Aqui está a listagem dos livros disponiveis:");
+                    List<LivroModel> livros = livroController.listarLivros();
+                    if (livros.isEmpty()){
+                        JOptionPane.showMessageDialog(null, "Não a livros disponiveis.");
+                    } else {
+                        StringBuilder listaLivros = new StringBuilder("Livros Disponiveis: \n");
+                        for (LivroModel livro : livros) {
+                            listaLivros.append("Título: ").append(livro.getTitulo())
+                                       .append(", Autor: ").append(livro.getAutor())
+                                       .append(", ISBN: ").append(livro.getIsbn())
+                                       .append(", Quantidade: ").append(livro.getQtd_disponivel())
+                                       .append("\n");
+                        }
+                        JOptionPane.showMessageDialog(null, listaLivros.toString());
+                    }
                     break;
                 case 0:
                     JOptionPane.showMessageDialog(null, "Saindo...");
